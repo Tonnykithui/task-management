@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+    @apply bg-slate-200 h-screen w-screen;
+}
+
+.heading {
+    @apply text-center text-3xl;
+}
+
+.task-body {
+    @apply grid grid-cols-3 gap-2 relative;
+}
+
+.btn {
+    @apply rounded-lg bg-blue-700 text-white p-2;
+}
+
+canvas {
+    @apply h-52;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+.task {
+    @apply bg-slate-200 mb-2 rounded-md pt-1 pb-1 p-4 flex justify-between;
+}
