@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+    @apply box-border;
+}
+
+body{
+    @apply w-full h-full;
+}
+.App {
+    @apply bg-slate-200 h-screen w-screen;
+}
+
+.heading {
+    @apply text-center text-3xl;
+}
+
+.task-body {
+    @apply grid grid-cols-4 gap-2 relative w-screen h-screen;
+}
+
+.btn {
+    @apply rounded-lg bg-blue-700 text-white p-2;
+}
+
+canvas {
+    @apply h-52;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+.task {
+    @apply bg-slate-200 mb-2 flex rounded-md pt-1 pb-1 p-4 justify-between w-64 relative;
+}
+
+.task:nth-child(odd){
+    @apply self-end;
+}
+
+.tasks {
+    height: calc(100vh - 60px);
+    padding-bottom: 10px;
+    overflow-y: hidden;
+}
+
+.tasks::after {
+    content: '';
+    width: 3px;
+    height: 100%;
+    background: #000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.extension {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: #F5E8E4;
+    transform: rotate(40deg);
+    right: -10px;
+    top: calc(50% - 10px);
+}
+
+.task:nth-child(odd) .extension{
+    right: auto;
+    left: -10px;
+}
