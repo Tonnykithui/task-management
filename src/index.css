@@ -9,7 +9,7 @@
 }
 
 body{
-    @apply w-full h-full;
+    @apply w-full h-full overflow-hidden ;
 }
 .App {
     @apply bg-slate-200 h-screen w-screen;
@@ -36,7 +36,7 @@ canvas {
 }
 
 .task {
-    @apply bg-slate-200 mb-2 flex rounded-md pt-1 pb-1 p-4 justify-between w-64 relative;
+    @apply bg-slate-200 mb-2 flex rounded-md pt-1 pb-1 p-4 justify-between w-64 relative z-50;
 }
 
 .task:nth-child(odd){
@@ -47,17 +47,18 @@ canvas {
     height: calc(100vh - 60px);
     padding-bottom: 10px;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .tasks::after {
     content: '';
     width: 3px;
     height: 100%;
-    background: #000;
+    background: rgb(44, 24, 119);
     display: block;
     position: absolute;
     top: 0;
-    left: 50%;
+    left: calc(50% + 2px);
 }
 
 .extension {
@@ -68,9 +69,33 @@ canvas {
     transform: rotate(40deg);
     right: -10px;
     top: calc(50% - 10px);
+    z-index: 1;
 }
 
 .task:nth-child(odd) .extension{
     right: auto;
     left: -10px;
+}
+
+.task::after{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #000;
+    border-radius: 50%;
+    right: -52px;
+    top: calc(50% - 10px);
+}
+
+.task:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #000;
+    border-radius: 50%;
+    right: auto;
+    left: -50px;
+    top: calc(50% - 10px);
 }

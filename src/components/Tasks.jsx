@@ -54,8 +54,8 @@ const Tasks = () => {
         }
     ]
   return (
-    <div className='bg-white rounded-lg p-2 mt-2 relative col-span-2 tasks'>
-        <ul className='overflow-y-scroll overflow-hidden example p-2 absolute h-full w-full pr-10 pl-10 flex flex-col'>
+    <div className='bg-white rounded-lg m-2 relative col-span-2 tasks w-11/12'>
+        <ul className='overflow-y-scroll overflow-hidden example p-4 absolute h-full w-full flex flex-col'>
             {
                 tasks.map((task) => (
                     <Task key={task.id} info={task.info} time={task.time} completed={task.completed} date={task.date}/>
