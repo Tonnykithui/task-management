@@ -36,7 +36,7 @@ canvas {
 }
 
 .task {
-    @apply bg-slate-200 mb-2 flex rounded-md pt-1 pb-1 p-4 justify-between w-64 relative z-50;
+    @apply bg-slate-200 mb-2 flex rounded-md pt-1 pb-1 p-4 justify-between w-64 relative z-40;
 }
 
 .task:nth-child(odd){
@@ -82,7 +82,8 @@ canvas {
     position: absolute;
     height: 20px;
     width: 20px;
-    background: #000;
+    border: 3px solid black;
+    background: white;
     border-radius: 50%;
     right: -52px;
     top: calc(50% - 10px);
@@ -93,7 +94,8 @@ canvas {
     position: absolute;
     height: 20px;
     width: 20px;
-    background: #000;
+    border: 3px solid black;
+    background: white;
     border-radius: 50%;
     right: auto;
     left: -50px;

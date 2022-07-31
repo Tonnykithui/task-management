@@ -1,5 +1,7 @@
 import React from 'react'
+import { showTaskMod } from '../redux/modal/Action'
 import Task from './Task'
+import { useDispatch } from 'react-redux/es/exports';
 
 const Tasks = () => {
     const tasks = [
@@ -53,8 +55,12 @@ const Tasks = () => {
             completed:false
         }
     ]
+
+    const dispatch = useDispatch();
+    
   return (
     <div className='bg-white rounded-lg m-2 relative col-span-2 tasks w-11/12'>
+        <button className='btn absolute top-2 left-2 z-50' onClick={() => dispatch(showTaskMod())}>Add Task</button>
         <ul className='overflow-y-scroll overflow-hidden example p-4 absolute h-full w-full flex flex-col'>
             {
                 tasks.map((task) => (
