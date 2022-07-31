@@ -1,5 +1,7 @@
 import React from 'react'
 import Subtask from './Subtask'
+import { useDispatch } from 'react-redux'
+import { showSubtaskMod } from '../redux/modal/Action'
 
 const SubTasks = () => {
     const subtasks = [
@@ -28,6 +30,9 @@ const SubTasks = () => {
             info:'Bike riding'
         }
     ]
+
+    const dispatch = useDispatch();
+
   return (
     <div className='bg-white rounded-lg p-1'>
         <ul className='h-36 overflow-y-scroll example'>
@@ -37,7 +42,7 @@ const SubTasks = () => {
                 ))
             }
         </ul>
-        <button className='btn'> + Add subtask</button>
+        <button className='btn' onClick={() => dispatch(showSubtaskMod())}> + Add subtask</button>
     </div>
   )
 }

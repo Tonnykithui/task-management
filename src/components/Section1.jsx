@@ -1,5 +1,7 @@
 import React from 'react'
 import Group from './Group';
+import { useDispatch } from 'react-redux';
+import { showGroupMod } from '../redux/modal/Action';
 
 const Section1 = () => {
     const tasks = [
@@ -28,6 +30,8 @@ const Section1 = () => {
             color:"pink"
         }
     ];
+
+    const dispatch = useDispatch();
   return (
     <div className='flex flex-col gap-2 p-3'>
         {
@@ -36,7 +40,7 @@ const Section1 = () => {
             ))
         }
         <div>
-            <button className='btn w-full text-lg font-semibold'>
+            <button className='btn w-full text-lg font-semibold' onClick={() => dispatch(showGroupMod())}>
                 + Create New Group
             </button>
         </div>

@@ -99,3 +99,11 @@ canvas {
     left: -50px;
     top: calc(50% - 10px);
 }
+
+.input {
+    @apply p-2 h-8 w-80 mb-3 outline-none bg-slate-300 rounded-lg;
+}
+
+.task-input {
+    @apply p-2 bg-slate-300 rounded-md outline-none w-full text-black;
+}
