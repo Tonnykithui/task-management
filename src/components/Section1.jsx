@@ -2,6 +2,7 @@ import React from 'react'
 import Group from './Group';
 import { useDispatch } from 'react-redux';
 import { showGroupMod } from '../redux/modal/Action';
+import { useSelector } from 'react-redux';
 
 const Section1 = () => {
     const tasks = [
@@ -31,6 +32,7 @@ const Section1 = () => {
         }
     ];
 
+    // const tasks = useSelector(state => state.groupReducer.data)
     const dispatch = useDispatch();
   return (
     <div className='flex flex-col gap-2 p-3'>

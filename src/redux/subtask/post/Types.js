@@ -1,0 +1,3 @@
+export const ADD_SUBTASK_REQ = 'ADD_SUBTASK_REQ';
+export const ADD_SUBTASK_SUC = 'ADD_SUBTASK_SUC';
+export const ADD_SUBTASK_FAIL = 'ADD_SUBTASK_FAIL';

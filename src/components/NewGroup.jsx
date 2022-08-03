@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { addGroupThunk } from '../redux';
+import { addGroupThunk } from '../redux/group';
 
 const NewGroup = () => {
 

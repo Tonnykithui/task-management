@@ -3,6 +3,10 @@
     {
       "group": "Hiing",
       "id": 1
+    },
+    {
+      "group": "Fishing",
+      "id": 2
     }
   ],
   "subtask": [],
