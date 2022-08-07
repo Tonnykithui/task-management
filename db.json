@@ -6,8 +6,8 @@
       "id": 5
     },
     {
-      "group": "Group 5",
-      "color": "blue",
+      "group": "Cooking",
+      "color": "red",
       "id": 6
     }
   ],
@@ -39,6 +39,10 @@
     {
       "subTask": "trial",
       "id": 15
+    },
+    {
+      "subTask": "Some other subtasks",
+      "id": 16
     }
   ],
   "task": [
@@ -73,6 +77,22 @@
       "groupie": "Group 4",
       "completed": false,
       "id": 4
+    },
+    {
+      "value": "2022-08-10",
+      "task": "Do it right",
+      "time": "24-7",
+      "groupie": "Cooking",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "value": "2022-08-09",
+      "task": "Find out",
+      "time": "23",
+      "groupie": "Group 4",
+      "completed": false,
+      "id": 6
     }
   ]
 }

@@ -1,29 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Charting from './Charting'
 import Highlights from './Highlights'
 import SubTasks from './SubTasks'
+import { useSelector } from 'react-redux';
 
 const Section2 = () => {
-  const highlights = [
-    {
-      id:1,
-      group:'Meeting',
-      title:"Maldives things",
-      time:'02-03-2022'
-    },
-    {
-      id:2,
-      group:'General',
-      title:"Friday gaming club",
-      time:'04-03-2022'
-    }
-  ]
+
+  const [highlights, setHighlights] = useState([]);
+  const tasks = useSelector(state => state.getTask.data);
+  // console.log(tasks.slice(0,2));
+  // setHighlights(tasks.slice(0,1));
+  // let newTask = [];
+  // setInterval(() => {
+  //   const shuffled = tasks.sort(() => 0.5 - Math.random());
+  //   newTask = shuffled.slice(0, 1);
+  //   setHighlights(newTask);
+  // }, 10000);
+
+  // console.log(newTask);
+
+  useEffect(() => {
+    setHighlights(tasks.slice(0,2));
+  }, []);
+
   return (
     <div className='flex flex-col p-3 gap-2'>
         <div className='grid grid-cols-2 gap-1'>
           {
             highlights.map((highlight) => (
-              <Highlights highlight={highlight}/>
+              <Highlights key={highlight.id} highlight={highlight}/>
             ))
           }
         </div>
