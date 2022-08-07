@@ -1,38 +1,40 @@
-import { ADD_TASK_ERR, ADD_TASK_SUC, ADD_TASK_REQ } from "./Types";
+import { UPDATE_TASK_REQ, UPDATE_TASK_SUC, UPDATE_TASK_ERR } from "./Types";
 import axios from 'axios';
+import { getTaskThunk } from "../get/Action";
 
-export const addTaskReq = task => {
+export const updateTaskReq = task => {
     return {
-        action:ADD_TASK_REQ,
+        type:UPDATE_TASK_REQ,
         payload:task
     }
 }
 
-export const addTaskSuc = success => {
+export const updateTaskSuc = success => {
     return {
-        action:ADD_TASK_SUC,
+        type:UPDATE_TASK_SUC,
         payload:success
     }
 } 
 
-export const addTaskErr = error => {
+export const updateTaskErr = error => {
     return {
-        action:ADD_TASK_ERR,
+        type:UPDATE_TASK_ERR,
         payload:error
     }
 }
 
-export const addTaskThunk = task => {
+export const updateTaskThunk = (id,task) => {
     return (dispatch) => {
-        dispatch(addTaskReq())
-        axios.post('http://localhost:5000/task', task)
+        dispatch(updateTaskReq())
+        axios.put(`http://localhost:5000/task/${id}`, task)
              .then(response => {
                 const data = response.data;
-                dispatch(addTaskSuc(data));
+                dispatch(updateTaskSuc(data));
+                dispatch(getTaskThunk())
              })
              .catch(error => {
                 const err = error.Message;
-                dispatch(addTaskErr(err));
+                dispatch(updateTaskErr(err));
              })
     }
 }

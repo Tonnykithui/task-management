@@ -1,38 +1,38 @@
-import { ADD_SUBTASK_FAIL, ADD_SUBTASK_REQ, ADD_SUBTASK_SUC } from "./Types"
+import { GET_SUBTASK_FAIL, GET_SUBTASK_REQ, GET_SUBTASK_SUC } from "./Types"
 import axios from 'axios';
 
-export const addSubtaskReq = data => {
+export const getSubtaskReq = data => {
     return {
-        type:ADD_SUBTASK_REQ,
+        type:GET_SUBTASK_REQ,
         payload:data
     }
 }
 
-export const addSubTaskSuc = success => {
+export const getSubTaskSuc = success => {
     return {
-        type:ADD_SUBTASK_SUC,
+        type:GET_SUBTASK_SUC,
         payload:success
     }
 }
 
-export const addSubTaskFail = error => {
+export const getSubTaskFail = error => {
     return {
-        type:ADD_SUBTASK_FAIL,
+        type:GET_SUBTASK_FAIL,
         payload:error
     }
 }
 
-export const addSubTaskThunk = subtask => {
+export const getSubTaskThunk = () => {
     return (dispatch) => {
-        dispatch(addSubtaskReq())
-        axios.post('http://localhost:5000/subtask', subtask)
+        dispatch(getSubtaskReq())
+        axios.get('http://localhost:5000/subtask')
              .then(response => {
                 const feed = response.data;
-                dispatch(addSubTaskSuc(feed));
+                dispatch(getSubTaskSuc(feed));
              })
              .catch(error => {
                 const err = error.Message;
-                dispatch(addSubTaskFail(err));
+                dispatch(getSubTaskFail(err));
              })
     }
 } 

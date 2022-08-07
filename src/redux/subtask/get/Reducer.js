@@ -1,4 +1,4 @@
-import { ADD_SUBTASK_REQ, ADD_SUBTASK_SUC, ADD_SUBTASK_FAIL } from "./Types";
+import { GET_SUBTASK_REQ, GET_SUBTASK_SUC, GET_SUBTASK_FAIL } from "./Types";
 
 const init = {
     loading:false,
@@ -6,28 +6,29 @@ const init = {
     error:''
 }
 
-const subTaskReducer = (state=init, action) => {
+const getSubTaskReducer = (state=init, action) => {
     switch (action.type) {
-        case ADD_SUBTASK_REQ:
+        case GET_SUBTASK_REQ:
             return {
                 ...state,
                 loading:true
             }
         
-        case ADD_SUBTASK_SUC:
+        case GET_SUBTASK_SUC:
             return {
                 ...state,
                 data:action.payload
             }
 
-        case ADD_SUBTASK_FAIL:
+        case GET_SUBTASK_FAIL:
             return {
                 ...state,
                 error:action.payload
             }
+
         default:
             return state;
     }
 }
 
-export default subTaskReducer;
+export default getSubTaskReducer;

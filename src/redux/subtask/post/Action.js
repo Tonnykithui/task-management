@@ -1,5 +1,7 @@
 import { ADD_SUBTASK_FAIL, ADD_SUBTASK_REQ, ADD_SUBTASK_SUC } from "./Types"
 import axios from 'axios';
+import { hideModal } from "../../modal/Action";
+import { getSubTaskThunk } from "../get/Action";
 
 export const addSubtaskReq = data => {
     return {
@@ -28,7 +30,9 @@ export const addSubTaskThunk = subtask => {
         axios.post('http://localhost:5000/subtask', subtask)
              .then(response => {
                 const feed = response.data;
-                dispatch(addSubTaskSuc(feed));
+                dispatch(addSubTaskSuc(feed))
+                dispatch(getSubTaskThunk())
+                dispatch(hideModal())
              })
              .catch(error => {
                 const err = error.Message;

@@ -1,38 +1,38 @@
-import { ADD_SUBTASK_FAIL, ADD_SUBTASK_REQ, ADD_SUBTASK_SUC } from "./Types"
+import { UPDATE_SUBTASK_FAIL, UPDATE_SUBTASK_REQ, UPDATE_SUBTASK_SUC } from "./Types"
 import axios from 'axios';
 
-export const addSubtaskReq = data => {
+export const updateSubtaskReq = data => {
     return {
-        type:ADD_SUBTASK_REQ,
+        type:UPDATE_SUBTASK_REQ,
         payload:data
     }
 }
 
-export const addSubTaskSuc = success => {
+export const updateSubTaskSuc = success => {
     return {
-        type:ADD_SUBTASK_SUC,
+        type:UPDATE_SUBTASK_SUC,
         payload:success
     }
 }
 
-export const addSubTaskFail = error => {
+export const updateSubTaskFail = error => {
     return {
-        type:ADD_SUBTASK_FAIL,
+        type:UPDATE_SUBTASK_FAIL,
         payload:error
     }
 }
 
-export const addSubTaskThunk = subtask => {
+export const updateSubTaskThunk = subtask => {
     return (dispatch) => {
-        dispatch(addSubtaskReq())
-        axios.post('http://localhost:5000/subtask', subtask)
+        dispatch(updateSubtaskReq())
+        axios.post(`http://localhost:5000/subtask/${subtask.id}`, subtask)
              .then(response => {
                 const feed = response.data;
-                dispatch(addSubTaskSuc(feed));
+                dispatch(updateSubTaskSuc(feed));
              })
              .catch(error => {
                 const err = error.Message;
-                dispatch(addSubTaskFail(err));
+                dispatch(updateSubTaskFail(err));
              })
     }
 } 

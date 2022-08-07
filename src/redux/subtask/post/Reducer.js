@@ -6,7 +6,7 @@ const init = {
     error:''
 }
 
-const subTaskReducer = (state=init, action) => {
+const postSubTaskReducer = (state=init, action) => {
     switch (action.type) {
         case ADD_SUBTASK_REQ:
             return {
@@ -30,4 +30,4 @@ const subTaskReducer = (state=init, action) => {
     }
 }
 
-export default subTaskReducer;
+export default postSubTaskReducer;

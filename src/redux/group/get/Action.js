@@ -21,7 +21,7 @@ export const getGroupFail = error => {
     }
 }
 
-export const getGroupThunk = group => {
+export const getGroupThunk = () => {
     return (dispatch) => {
         dispatch(getGroupReq());
         axios.get('http://localhost:5000/group')

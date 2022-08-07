@@ -1,5 +1,7 @@
 import { ADD_GROUP_FAIL, ADD_GROUP_REQ, ADD_GROUP_SUC } from "./Types"
 import axios from 'axios';
+import { getGroupThunk } from "../get/Action";
+import { hideTaskMod } from "../../modal";
 
 export const addGroupReq = group => {
     return {
@@ -29,6 +31,8 @@ export const addGroupThunk = group => {
              .then(response  => {
                 const feed = response.data;
                 dispatch(addGroupSuc(feed));
+                dispatch(getGroupThunk());
+                dispatch(hideTaskMod());
              })
              .catch(error => {
                 const err = error.Message;

@@ -1,14 +1,78 @@
 {
   "group": [
     {
-      "group": "Hiing",
+      "group": "Group 4",
+      "color": "red",
+      "id": 5
+    },
+    {
+      "group": "Group 5",
+      "color": "blue",
+      "id": 6
+    }
+  ],
+  "subtask": [
+    {
+      "subTask": "Turn off the radio",
+      "id": 6
+    },
+    {
+      "subTask": "this aint the world that it used to be",
+      "id": 9
+    },
+    {
+      "subTask": "this aint the world that it used to be",
+      "id": 10
+    },
+    {
+      "subTask": "Green",
+      "id": 11
+    },
+    {
+      "subTask": "Green",
+      "id": 13
+    },
+    {
+      "subTask": "Find soxsox",
+      "id": 14
+    },
+    {
+      "subTask": "trial",
+      "id": 15
+    }
+  ],
+  "task": [
+    {
+      "value": "2022-08-08",
+      "task": "Gaming",
+      "time": "120",
+      "groupie": "Group 5",
+      "completed": false,
       "id": 1
     },
     {
-      "group": "Fishing",
+      "value": "2022-08-10",
+      "task": "Fetch water",
+      "time": "30",
+      "groupie": "Group 4",
+      "completed": false,
       "id": 2
+    },
+    {
+      "value": "2022-08-10",
+      "task": "Watch soccer during friends meetup",
+      "time": "90",
+      "groupie": "Group 4",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "value": "2022-08-16",
+      "task": "Do what i feel like",
+      "time": "30mins",
+      "groupie": "Group 4",
+      "completed": false,
+      "id": 4
     }
-  ],
-  "subtask": [],
-  "task": []
+  ]
 }

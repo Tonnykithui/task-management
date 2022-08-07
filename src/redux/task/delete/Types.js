@@ -1,3 +1,3 @@
-export const ADD_TASK_REQ = 'ADD_TASK_REQ';
-export const ADD_TASK_SUC = 'ADD_TASK_SUC';
-export const ADD_TASK_ERR = 'ADD_TASK_ERR';
+export const DELETE_TASK_REQ = 'DELETE_TASK_REQ';
+export const DELETE_TASK_SUC = 'DELETE_TASK_SUC';
+export const DELETE_TASK_ERR = 'DELETE_TASK_ERR';

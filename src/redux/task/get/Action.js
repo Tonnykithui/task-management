@@ -1,38 +1,39 @@
-import { ADD_TASK_ERR, ADD_TASK_SUC, ADD_TASK_REQ } from "./Types";
+import { GET_TASK_ERR, GET_TASK_SUC, GET_TASK_REQ } from "./Types";
 import axios from 'axios';
 
-export const addTaskReq = task => {
+export const getTaskReq = data => {
     return {
-        action:ADD_TASK_REQ,
-        payload:task
+        type:GET_TASK_REQ,
+        payload:data
     }
 }
 
-export const addTaskSuc = success => {
+export const getTaskSuc = success => {
     return {
-        action:ADD_TASK_SUC,
+        type:GET_TASK_SUC,
         payload:success
     }
 } 
 
-export const addTaskErr = error => {
+export const getTaskErr = error => {
     return {
-        action:ADD_TASK_ERR,
+        type:GET_TASK_ERR,
         payload:error
     }
 }
 
-export const addTaskThunk = task => {
+export const getTaskThunk = () => {
     return (dispatch) => {
-        dispatch(addTaskReq())
-        axios.post('http://localhost:5000/task', task)
+        dispatch(getTaskReq())
+        axios.get('http://localhost:5000/task')
              .then(response => {
-                const data = response.data;
-                dispatch(addTaskSuc(data));
+                const info = response.data;
+                console.log(info);
+                dispatch(getTaskSuc(info));
              })
              .catch(error => {
                 const err = error.Message;
-                dispatch(addTaskErr(err));
+                dispatch(getTaskErr(err));
              })
     }
 }

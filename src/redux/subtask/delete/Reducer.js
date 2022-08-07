@@ -1,4 +1,4 @@
-import { ADD_SUBTASK_REQ, ADD_SUBTASK_SUC, ADD_SUBTASK_FAIL } from "./Types";
+import { DELETE_SUBTASK_REQ, DELETE_SUBTASK_SUC, DELETE_SUBTASK_FAIL } from "./Types";
 
 const init = {
     loading:false,
@@ -6,28 +6,29 @@ const init = {
     error:''
 }
 
-const subTaskReducer = (state=init, action) => {
+const deleteSubTaskReducer = (state=init, action) => {
     switch (action.type) {
-        case ADD_SUBTASK_REQ:
+        case DELETE_SUBTASK_REQ:
             return {
                 ...state,
                 loading:true
             }
         
-        case ADD_SUBTASK_SUC:
+        case DELETE_SUBTASK_SUC:
             return {
                 ...state,
                 data:action.payload
             }
 
-        case ADD_SUBTASK_FAIL:
+        case DELETE_SUBTASK_FAIL:
             return {
                 ...state,
                 error:action.payload
             }
+
         default:
             return state;
     }
 }
 
-export default subTaskReducer;
+export default deleteSubTaskReducer;

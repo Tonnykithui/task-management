@@ -1,5 +1,6 @@
 import { DELETE_GROUP_FAIL, DELETE_GROUP_REQ, DELETE_GROUP_SUC } from "./Types"
 import axios from 'axios';
+import { getGroupThunk } from "../get/Action";
 
 export const deleteGroupReq = id => {
     return {
@@ -29,6 +30,7 @@ export const deleteGroupThunk = id => {
              .then(response  => {
                 const feed = response.data;
                 dispatch(deleteGroupSuc(feed));
+                dispatch(getGroupThunk())
              })
              .catch(error => {
                 const err = error.Message;

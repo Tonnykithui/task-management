@@ -1,38 +1,38 @@
-import { ADD_TASK_ERR, ADD_TASK_SUC, ADD_TASK_REQ } from "./Types";
+import { DELETE_TASK_ERR, DELETE_TASK_SUC, DELETE_TASK_REQ } from "./Types";
 import axios from 'axios';
 
-export const addTaskReq = task => {
+export const deleteTaskReq = task => {
     return {
-        action:ADD_TASK_REQ,
+        type:DELETE_TASK_REQ,
         payload:task
     }
 }
 
-export const addTaskSuc = success => {
+export const deleteTaskSuc = success => {
     return {
-        action:ADD_TASK_SUC,
+        type:DELETE_TASK_SUC,
         payload:success
     }
 } 
 
-export const addTaskErr = error => {
+export const deleteTaskErr = error => {
     return {
-        action:ADD_TASK_ERR,
+        type:DELETE_TASK_ERR,
         payload:error
     }
 }
 
-export const addTaskThunk = task => {
+export const deleteTaskThunk = taskId => {
     return (dispatch) => {
-        dispatch(addTaskReq())
-        axios.post('http://localhost:5000/task', task)
+        dispatch(deleteTaskReq())
+        axios.delete(`http://localhost:5000/task/${taskId}`)
              .then(response => {
                 const data = response.data;
-                dispatch(addTaskSuc(data));
+                dispatch(deleteTaskSuc(data));
              })
              .catch(error => {
                 const err = error.Message;
-                dispatch(addTaskErr(err));
+                dispatch(deleteTaskErr(err));
              })
     }
 }
