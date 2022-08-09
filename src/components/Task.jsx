@@ -6,6 +6,7 @@ const Task = ({task}) => {
   return (
     <div className={task.completed ? `border-l-4 border-red-600 task`:`border-l-4 border-blue-600 task`}>
         <div>
+            <h4>{task.groupie}</h4>
             <h2 className='font-semibold text-lg'>{task.task}</h2>
             <h3>{task.value}</h3>
             <p className='text-blue-500 font-semibold'>{task.time} minutes</p>

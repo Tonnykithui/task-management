@@ -1,11 +1,6 @@
 {
   "group": [
     {
-      "group": "Group 4",
-      "color": "red",
-      "id": 5
-    },
-    {
       "group": "Cooking",
       "color": "red",
       "id": 6
@@ -93,6 +88,14 @@
       "groupie": "Group 4",
       "completed": false,
       "id": 6
+    },
+    {
+      "value": "2022-08-11",
+      "task": "soemthing",
+      "time": "20",
+      "groupie": "Cooking",
+      "completed": false,
+      "id": 7
     }
   ]
 }
