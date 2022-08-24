@@ -9,10 +9,11 @@
 }
 
 body{
-    @apply w-full h-full overflow-hidden ;
+    @apply w-full h-full;
 }
+
 .App {
-    @apply bg-slate-200 h-screen w-screen;
+    @apply bg-slate-200 w-screen h-screen;
 }
 
 .heading {
@@ -20,7 +21,7 @@ body{
 }
 
 .task-body {
-    @apply grid grid-cols-4 gap-2 relative w-screen h-screen;
+    @apply grid grid-cols-4 gap-2 relative w-screen ;
 }
 
 .btn {

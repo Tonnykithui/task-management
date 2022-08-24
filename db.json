@@ -4,6 +4,26 @@
       "group": "Cooking",
       "color": "red",
       "id": 6
+    },
+    {
+      "group": "Riding",
+      "color": "blue",
+      "id": 7
+    },
+    {
+      "group": "Something",
+      "color": "green",
+      "id": 8
+    },
+    {
+      "group": "Walk",
+      "color": "green",
+      "id": 9
+    },
+    {
+      "group": "Learn SOLIDITY",
+      "color": "blue",
+      "id": 10
     }
   ],
   "subtask": [
@@ -38,64 +58,76 @@
     {
       "subTask": "Some other subtasks",
       "id": 16
+    },
+    {
+      "subTask": "new one",
+      "id": 17
+    },
+    {
+      "subTask": "its working",
+      "id": 18
+    },
+    {
+      "subTask": "Something cool",
+      "id": 19
+    },
+    {
+      "subTask": "crazed",
+      "id": 20
+    },
+    {
+      "subTask": "Summer",
+      "id": 21
+    },
+    {
+      "subTask": "new",
+      "id": 22
+    },
+    {
+      "subTask": "tttt",
+      "id": 23
     }
   ],
   "task": [
     {
-      "value": "2022-08-08",
-      "task": "Gaming",
-      "time": "120",
-      "groupie": "Group 5",
+      "value": "2022-08-26",
+      "task": "try 1",
+      "time": "20",
+      "groupie": "Cooking",
       "completed": false,
       "id": 1
     },
     {
-      "value": "2022-08-10",
-      "task": "Fetch water",
-      "time": "30",
-      "groupie": "Group 4",
+      "value": "2022-08-26",
+      "task": "ew",
+      "time": "2",
+      "groupie": "Something",
       "completed": false,
       "id": 2
     },
     {
-      "value": "2022-08-10",
-      "task": "Watch soccer during friends meetup",
-      "time": "90",
-      "groupie": "Group 4",
+      "value": "2022-08-25",
+      "task": "edd",
+      "time": "34",
+      "groupie": "Riding",
       "completed": false,
       "id": 3
     },
     {
-      "value": "2022-08-16",
-      "task": "Do what i feel like",
-      "time": "30mins",
-      "groupie": "Group 4",
+      "value": "2022-08-26",
+      "task": "eee",
+      "time": "34",
+      "groupie": "Walk",
       "completed": false,
       "id": 4
     },
     {
-      "value": "2022-08-10",
-      "task": "Do it right",
-      "time": "24-7",
-      "groupie": "Cooking",
+      "value": "2022-08-27",
+      "task": "rtt",
+      "time": "34",
+      "groupie": "Something",
       "completed": false,
       "id": 5
-    },
-    {
-      "value": "2022-08-09",
-      "task": "Find out",
-      "time": "23",
-      "groupie": "Group 4",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "value": "2022-08-11",
-      "task": "soemthing",
-      "time": "20",
-      "groupie": "Cooking",
-      "completed": false,
-      "id": 7
     }
   ]
 }

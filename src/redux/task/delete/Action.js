@@ -1,5 +1,6 @@
 import { DELETE_TASK_ERR, DELETE_TASK_SUC, DELETE_TASK_REQ } from "./Types";
 import axios from 'axios';
+import { getTaskThunk } from "../get/Action";
 
 export const deleteTaskReq = task => {
     return {
@@ -29,6 +30,7 @@ export const deleteTaskThunk = taskId => {
              .then(response => {
                 const data = response.data;
                 dispatch(deleteTaskSuc(data));
+                dispatch(getTaskThunk());
              })
              .catch(error => {
                 const err = error.Message;
